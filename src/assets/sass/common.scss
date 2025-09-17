@@ -1,0 +1,15 @@
+// core styles
+@import "@/assets/sass/core/variables.scss";
+@import "@/assets/sass/core/normalizer.scss";
+@import "@/assets/sass/core/keyframes.scss";
+@import "@/assets/sass/core/mixins.scss";
+
+// components' styles
+@import "@/assets/sass/components/compButton.scss";
+@import "@/assets/sass/components/compHeader.scss";
+@import "@/assets/sass/components/compFooter.scss";
+@import "@/assets/sass/components/compInput.scss";
+@import "@/assets/sass/components/compTextarea.scss";
+@import "@/assets/sass/components/compLoader.scss";
+@import "@/assets/sass/components/compOdometer.scss";
+@import "@/assets/sass/components/compHacktext.scss";

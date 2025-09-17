@@ -1,0 +1,120 @@
+@font-face {
+    font-family: 'SK Zweig';
+    src: url('SKZweig-Bold.woff2') format('woff2'),
+        url('SKZweig-Bold.woff') format('woff'),
+        url('SKZweig-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SK Zweig';
+    src: url('SKZweig-Black.woff2') format('woff2'),
+        url('SKZweig-Black.woff') format('woff'),
+        url('SKZweig-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SK Zweig ExtBd';
+    src: url('SKZweig-ExtraBold.woff2') format('woff2'),
+        url('SKZweig-ExtraBold.woff') format('woff'),
+        url('SKZweig-ExtraBold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SK Zweig ExtBlk';
+    src: url('SKZweig-ExtraBlack.woff2') format('woff2'),
+        url('SKZweig-ExtraBlack.woff') format('woff'),
+        url('SKZweig-ExtraBlack.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SK Zweig ExtLt';
+    src: url('SKZweig-ExtraLight.woff2') format('woff2'),
+        url('SKZweig-ExtraLight.woff') format('woff'),
+        url('SKZweig-ExtraLight.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SK Zweig';
+    src: url('SKZweig-Heavy.woff2') format('woff2'),
+        url('SKZweig-Heavy.woff') format('woff'),
+        url('SKZweig-Heavy.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SK Zweig';
+    src: url('SKZweig-Regular.woff2') format('woff2'),
+        url('SKZweig-Regular.woff') format('woff'),
+        url('SKZweig-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SK Zweig';
+    src: url('SKZweig-Light.woff2') format('woff2'),
+        url('SKZweig-Light.woff') format('woff'),
+        url('SKZweig-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SK Zweig Med';
+    src: url('SKZweig-Medium.woff2') format('woff2'),
+        url('SKZweig-Medium.woff') format('woff'),
+        url('SKZweig-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SK Zweig SemBd';
+    src: url('SKZweig-SemiBold.woff2') format('woff2'),
+        url('SKZweig-SemiBold.woff') format('woff'),
+        url('SKZweig-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SK Zweig';
+    src: url('SKZweig-Thin.woff2') format('woff2'),
+        url('SKZweig-Thin.woff') format('woff'),
+        url('SKZweig-Thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SK Zweig SemLt';
+    src: url('SKZweig-SemiLight.woff2') format('woff2'),
+        url('SKZweig-SemiLight.woff') format('woff'),
+        url('SKZweig-SemiLight.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+

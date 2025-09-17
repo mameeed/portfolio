@@ -1,0 +1,83 @@
+.mdbtn {
+    all: unset;
+    box-sizing: border-box;
+
+    display: inline-flex;
+    padding: 12px 20px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    gap: 10px;
+    height: 45px;
+    cursor: pointer;
+    transition: 0.3s;
+    background: #fff;
+    will-change: transform;
+
+    &__icon {
+        width: 20px;
+        height: 20px;
+        object-fit: contain;
+        display: flex;
+    }
+
+    &__text {
+        color: #252324;
+        font-family: "SK Zweig";
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 100%; /* 19.2px */
+        transition: 0.2s;
+        white-space: nowrap;
+        padding-top: 3px;
+    }
+
+    &__loading {
+        width: 20px;
+        height: 20px;
+        display: flex;
+        object-fit: contain;
+        animation: rotater 1s linear infinite;
+        position: absolute;
+        z-index: 3;
+        top: calc(50% - 10px);
+        left: calc(50% - 10px);
+        transition: 0.3s;
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    &.tp-loading {
+        opacity: 0.7;
+        pointer-events: none;
+
+        &::after,
+        .vgbtn__loading {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+
+    &:hover {
+        transform: scale(1.05);
+    }
+
+    &:active {
+        transform: scale(1);
+    }
+
+    &::after {
+        background: $accent;
+        position: absolute;
+        z-index: 2;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transition: 0.3s;
+        opacity: 0;
+        visibility: hidden;
+        content: "";
+    }
+}

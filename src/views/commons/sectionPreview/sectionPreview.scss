@@ -1,0 +1,81 @@
+@import "@/assets/sass/core/variables.scss";
+
+.vghm-preview {
+    height: 500px;
+    position: relative;
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        padding: 100px 0 0 0;
+    }
+
+    &__image {
+        position: absolute;
+        z-index: 0;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: flex;
+        filter: blur(2.5px) brightness(0.6);
+    }
+
+    &__title {
+        color: #fff;
+        text-align: center;
+        font-family: "Montserrat";
+        font-size: 38px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 120%; /* 75.6px */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        letter-spacing: 1px;
+        gap: 30px;
+        position: relative;
+        z-index: 2;
+        margin: 0 0 20px 0;
+
+        &::before,
+        &::after {
+            display: flex;
+            content: "";
+            width: 100px;
+            height: 2px;
+            background: #fff;
+        }
+    }
+
+    &__desc {
+        color: #fff;
+        text-align: center;
+        font-family: "Rubik";
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: 140%; /* 21.6px */
+        max-width: 400px;
+        position: relative;
+        z-index: 2;
+    }
+
+    &::before {
+        content: "";
+        display: flex;
+        position: absolute;
+        z-index: 2;
+        width: 280px;
+        height: 280px;
+        bottom: -40px;
+        left: -60px;
+        background: url("@/assets/images/bg-curve-text2.svg") no-repeat center center/contain;
+        animation: rotater 20s linear infinite;
+        filter: brightness(10);
+    }
+}

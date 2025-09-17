@@ -1,0 +1,43 @@
+.vg-input {
+    display: inline-block;
+    width: 100%;
+    padding: 15px 20px;
+    line-height: 1.5;
+    height: 55px;
+    border: 1px solid rgba(#252324, 0.2);
+    background: #fff;
+    font-size: 14px;
+    color: rgba(#252324, 0.8);
+
+    &::placeholder {
+        color: rgba(#252324, 0.4);
+    }
+
+    &.vg-error {
+        border-color: #f53737;
+
+        &::placeholder {
+            color: #f53737;
+        }
+    }
+
+    &.vg-success {
+        border-color: #52d834;
+
+        &::placeholder {
+            color: #52d834;
+        }
+    }
+
+    &:focus {
+        border-color: rgba(#004cff, 0.6);
+    }
+}
+
+@media (max-width: 576px) {
+    .vg-input {
+        padding: 10px 15px;
+        height: 45px;
+        font-size: 14px;
+    }
+}

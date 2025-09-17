@@ -1,0 +1,118 @@
+.md-footer {
+    background: #fff;
+    // height: 100px;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    transition: 0.6s;
+    transform: translateY(100%) !important;
+    opacity: 1 !important;
+
+    &__content {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        position: relative;
+        padding: 100px 0 20px 0;
+    }
+
+    &__text {
+        color: rgba(#252324, 0.5);
+        text-align: center;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 140%; /* 33.6px */
+        margin: 0 0 auto 0;
+        width: 600px;
+    }
+
+    &__quote {
+        display: flex;
+        align-items: center;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 900px;
+
+        &-text {
+            color: #252324;
+            text-align: center;
+            font-family: "SK Zweig";
+            font-size: 54px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+
+            // &::after {
+            //     display: inline-flex;
+            //     content: "_";
+            //     animation: coursor 1s step-start infinite;
+            // }
+        }
+
+        &-author {
+            color: rgba(#252324, 0.4);
+            text-align: center;
+            font-family: "SK Zweig";
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            position: relative;
+            display: flex;
+            align-items: center;
+
+            &::after,
+            &::before {
+                content: "";
+                width: 100px;
+                height: 1px;
+                background: rgba(#252324, 0.3);
+                margin: 0 20px;
+            }
+        }
+    }
+
+    &__copyright {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+
+        &-made,
+        &-update {
+            color: rgba(#252324, 0.5);
+            text-align: center;
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 140%; /* 16.8px */
+        }
+    }
+
+    &.is-inview {
+        transform: translateY(0) !important;
+        opacity: 1 !important;
+        pointer-events: all !important;
+    }
+}
+
+@keyframes coursor {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

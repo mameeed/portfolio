@@ -1,0 +1,168 @@
+@import "@/assets/sass/core/variables.scss";
+
+.md-contact {
+    padding: 100px 0;
+
+    &__content {
+        display: grid;
+        grid-template-columns: 30% auto;
+        position: relative;
+        gap: 50px;
+    }
+
+    &__titling {
+        align-self: flex-start;
+    }
+
+    &__title {
+        color: #252324;
+        font-family: "SK Zweig";
+        font-size: 56px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    &__subtitle {
+        font-size: 20px;
+        line-height: 160%;
+        font-weight: 300;
+        color: rgba(#252324, 0.6);
+        transition: 0.5s;
+        align-self: center;
+    }
+
+    &__info {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    &__separator {
+        color: #252324;
+        font-family: "SK Zweig";
+        font-size: 26px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &::after,
+        &::before {
+            content: "";
+            width: 100px;
+            height: 1px;
+            background: rgba(#252324, 0.3);
+            margin: 0 20px;
+        }
+    }
+
+    &__form {
+        width: 400px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+
+        &-title {
+            color: rgba(#252324, 0.6);
+            text-align: center;
+            font-family: "SK Zweig";
+            font-size: 28px;
+            font-style: normal;
+            font-weight: 300;
+            line-height: 120%; /* 28.8px */
+        }
+
+        &-subtitle {
+            color: rgba(#252324, 0.6);
+            text-align: center;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 300;
+            line-height: 160%; /* 19.2px */
+        }
+
+        &-block {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin: 20px 0 0 0;
+        }
+
+        &-btn {
+            align-self: flex-end;
+            padding: 0 40px;
+            background: rgba(#252324, 0.7);
+
+            * {
+                color: #fff;
+                letter-spacing: 1px;
+            }
+        }
+    }
+
+    &__socials {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        width: 100%;
+    }
+
+    .md-ctcard {
+        width: 100%;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 20px;
+        transition: 0.3s;
+        padding: 30px;
+        background: #fff;
+        transition: 0.3s;
+        filter: grayscale(1);
+
+        &__image {
+            display: flex;
+            width: 35px;
+            height: 35px;
+            flex-shrink: 0;
+            opacity: 0.5;
+
+            &-file {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+        }
+
+        &__details {
+            &-title {
+                color: #252324;
+                font-family: "SK Zweig";
+                font-size: 24px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 100%; /* 28.8px */
+                padding: 2px 0 0 0;
+            }
+
+            &-desc {
+                color: rgba(#252324, 0.6);
+                font-size: 12px;
+                font-style: normal;
+                font-weight: 300;
+                line-height: 160%; /* 19.2px */
+            }
+        }
+
+        &:hover {
+            filter: revert;
+            box-shadow: 0 0 30px -5px rgba(#252525, 0.05);
+        }
+    }
+}

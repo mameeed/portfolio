@@ -1,0 +1,71 @@
+$fontSize: 185;
+$fontHeight: calc($fontSize * 1.12) + px;
+$fontWidth: calc($fontSize / 1.6666) + px;
+
+.csmodo {
+    &__numbers {
+        display: flex;
+        position: relative;
+        overflow: hidden;
+        width: calc($fontWidth * 3);
+        height: $fontHeight;
+        will-change: transform;
+    }
+
+    &__num {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 0;
+        left: 0;
+        // animation: odometer 4s ease-in-out 1 forwards;
+        will-change: transform;
+        transition: all 4s cubic-bezier(0, 1.01, 0, 2);
+
+        &-item {
+            font-family: "PT Mono";
+            font-size: $fontSize + px;
+        }
+
+        &:nth-child(1) {
+            left: 0px;
+            transition-duration: 2s;
+        }
+        &:nth-child(2) {
+            left: $fontWidth;
+        }
+        &:nth-child(3) {
+            left: calc($fontWidth * 2);
+        }
+    }
+}
+
+.csmodo.md-animate {
+    .csmodo {
+        &__numbers {
+            animation: odometer-disappear 1s ease-in-out 3.2s 1 forwards;
+        }
+        &__num {
+            animation: odometer-count 3s ease-in-out 1 forwards;
+        }
+    }
+}
+
+@keyframes odometer-count {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(calc(-100% + $fontHeight));
+    }
+}
+@keyframes odometer-disappear {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+}

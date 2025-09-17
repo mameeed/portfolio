@@ -1,0 +1,76 @@
+.md-loader {
+    background: lightcoral;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 11;
+    transition: 0.3s;
+
+    &__wrapper {
+        display: flex;
+        height: 100%;
+    }
+
+    &__block {
+        width: 20%;
+        height: 100%;
+        background: #fff;
+        // border: 1px solid red;
+        animation: blockAppear 0.8s ease-in-out 1 forwards;
+        transform: translateY(-200px);
+
+        &:nth-child(even) {
+            background: #f9f9f9;
+        }
+
+        @for $i from 1 through 5 {
+            &:nth-child(#{$i}) {
+                animation-delay: #{($i - 1) * 0.1 - 0.1}s;
+                animation-duration: #{0.8 + ($i - 1) * 0.3}s;
+            }
+        }
+    }
+
+    &__data {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.md-introloader {
+    position: fixed;
+    z-index: 11;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #fff;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    padding: 100px 150px;
+    transition: 1s;
+
+    &.md-animate {
+        opacity: 0;
+    }
+}
+
+@keyframes blockAppear {
+    0% {
+        transform: translateY(-200px);
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+        background: #fff;
+    }
+}
