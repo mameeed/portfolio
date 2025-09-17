@@ -115,7 +115,7 @@
                                 </p>
                                 <div class="md-block__info-actions">
                                     <a
-                                        :href="`${base}/media/cv-mameed.pdf`"
+                                        :href="`${baseUrl}media/cv-mameed.pdf`"
                                         download>
                                         <CompButton
                                             data-scroll
@@ -195,9 +195,8 @@ export default {
         };
     },
     computed: {
-        base() {
-            // Use Vue CLI's BASE_URL or fallback to your domain
-            return process.env.BASE_URL || "https://mameed.com";
+        baseUrl() {
+            return process.env.BASE_URL;
         },
     },
     mounted() {
@@ -235,7 +234,7 @@ export default {
     },
     methods: {
         currentFrame(index) {
-            return `/webp-output/photo-${index}.webp`;
+            return `${this.baseUrl}webp-output/photo-${index}.webp`;
         },
         mapInverse(inputValue) {
             const inputMin = 6000;
