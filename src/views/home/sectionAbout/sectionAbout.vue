@@ -21,7 +21,7 @@
                         :key="'a' + index"
                         data-scroll
                         data-scroll-class="is-inview"
-                        data-scroll-offset="70%, 0%"
+                        data-scroll-offset="55%, 0%"
                         data-scroll-repeat="true">
                         {{ item }}
                     </p>
@@ -31,14 +31,14 @@
                         :key="'b' + index"
                         data-scroll
                         data-scroll-class="is-inview"
-                        data-scroll-offset="70%, 0%"
+                        data-scroll-offset="55%, 0%"
                         data-scroll-repeat="true">
                         {{ item }}
                     </p>
                     <div
                         data-scroll
                         data-scroll-class="is-inview"
-                        data-scroll-offset="70%, 0%"
+                        data-scroll-offset="55%, 0%"
                         data-scroll-repeat="true"
                         class="md-about__list-images">
                         <img
@@ -56,7 +56,7 @@
                         :key="'c' + index"
                         data-scroll
                         data-scroll-class="is-inview"
-                        data-scroll-offset="70%, 0%"
+                        data-scroll-offset="55%, 0%"
                         data-scroll-repeat="true">
                         {{ item }}
                     </p>
@@ -64,7 +64,7 @@
                     <div
                         data-scroll
                         data-scroll-class="is-inview"
-                        data-scroll-offset="70%, 0%"
+                        data-scroll-offset="55%, 0%"
                         data-scroll-repeat="true"
                         class="md-about__list-images">
                         <img
@@ -85,14 +85,14 @@
                         :key="'d' + index"
                         data-scroll
                         data-scroll-class="is-inview"
-                        data-scroll-offset="70%, 0%"
+                        data-scroll-offset="55%, 0%"
                         data-scroll-repeat="true">
                         {{ item }}
                     </p>
                     <div
                         data-scroll
                         data-scroll-class="is-inview"
-                        data-scroll-offset="70%, 0%"
+                        data-scroll-offset="55%, 0%"
                         data-scroll-repeat="true"
                         class="md-about__list-images">
                         <img
@@ -107,7 +107,7 @@
                         :key="'e' + index"
                         data-scroll
                         data-scroll-class="is-inview"
-                        data-scroll-offset="70%, 0%"
+                        data-scroll-offset="55%, 0%"
                         data-scroll-repeat="true">
                         {{ item }}
                     </p>
@@ -117,18 +117,18 @@
                     <CompTitle
                         data-scroll
                         data-scroll-class="is-inview"
-                        data-scroll-offset="50%, 0%"
+                        data-scroll-offset="55%, 0%"
                         data-scroll-repeat="true"
                         class="md-about__stack-title"
                         title="My Professional stack"
-                        :duration="0.1"
+                        :duration="0.001"
                         :repeat="false" />
 
                     <div class="md-about__stack-list">
                         <div
                             data-scroll
                             data-scroll-class="is-inview"
-                            data-scroll-offset="50%, 0%"
+                            data-scroll-offset="55%, 0%"
                             data-scroll-repeat="true"
                             v-for="item in primestack"
                             :key="item.label"
@@ -145,18 +145,18 @@
                     <CompTitle
                         data-scroll
                         data-scroll-class="is-inview"
-                        data-scroll-offset="50%, 0%"
+                        data-scroll-offset="55%, 0%"
                         data-scroll-repeat="true"
                         class="md-about__stack-title"
                         title="Had an experience with"
-                        :duration="5"
+                        :duration="0.001"
                         :repeat="false" />
 
                     <div class="md-about__stack-list">
                         <div
                             data-scroll
                             data-scroll-class="is-inview"
-                            data-scroll-offset="50%, 0%"
+                            data-scroll-offset="55%, 0%"
                             data-scroll-repeat="true"
                             v-for="item in kapralstack"
                             :key="item.label"
@@ -173,18 +173,18 @@
                     <CompTitle
                         data-scroll
                         data-scroll-class="is-inview"
-                        data-scroll-offset="50%, 0%"
+                        data-scroll-offset="55%, 0%"
                         data-scroll-repeat="true"
                         class="md-about__stack-title"
                         title="Loved using"
-                        :duration="10"
+                        :duration="0.001"
                         :repeat="false" />
 
                     <div class="md-about__stack-list">
                         <div
                             data-scroll
                             data-scroll-class="is-inview"
-                            data-scroll-offset="50%, 0%"
+                            data-scroll-offset="55%, 0%"
                             data-scroll-repeat="true"
                             v-for="item in toolstack"
                             :key="item.label"
