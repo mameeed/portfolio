@@ -19,7 +19,7 @@
                     v-for="n in 10"
                     :key="'card' + n"
                     data-scroll
-                    data-scroll-offset="250px, 0"
+                    data-scroll-offset="30%, 0"
                     class="md-glrycard">
                     <div class="md-glrycard__info">
                         <h3 class="md-glrycard__info-title">Project Title {{ n }}</h3>

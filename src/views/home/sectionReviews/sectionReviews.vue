@@ -23,7 +23,7 @@
                     <p
                         data-scroll
                         data-scroll-class="is-inview"
-                        data-scroll-offset="70%, 0%"
+                        data-scroll-offset="40%, 0%"
                         data-scroll-repeat="true"
                         class="md-rvws__info-text">
                         Collaboration means more than just delivering code — it’s about trust,
@@ -31,7 +31,7 @@
                     <p
                         data-scroll
                         data-scroll-class="is-inview"
-                        data-scroll-offset="70%, 0%"
+                        data-scroll-offset="40%, 0%"
                         data-scroll-repeat="true"
                         class="md-rvws__info-text">
                         communication, and shared goals. I value every client’s voice and continuously
@@ -39,7 +39,7 @@
                     <p
                         data-scroll
                         data-scroll-class="is-inview"
-                        data-scroll-offset="70%, 0%"
+                        data-scroll-offset="40%, 0%"
                         data-scroll-repeat="true"
                         class="md-rvws__info-text">
                         improve through feedback. Your words inspire my growth and future projects. I
@@ -47,7 +47,7 @@
                     <p
                         data-scroll
                         data-scroll-class="is-inview"
-                        data-scroll-offset="70%, 0%"
+                        data-scroll-offset="40%, 0%"
                         data-scroll-repeat="true"
                         class="md-rvws__info-text">
                         believe great partnerships build lasting success.
@@ -60,7 +60,7 @@
                         :key="'card' + index"
                         data-scroll
                         data-scroll-class="is-inview"
-                        data-scroll-offset="500px, 0"
+                        data-scroll-offset="40%, 0"
                         data-scroll-repeat="true"
                         :data-scroll-call="`card_${index}`"
                         @mouseenter="startTyping(index)"

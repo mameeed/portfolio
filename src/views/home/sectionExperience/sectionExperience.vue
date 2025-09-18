@@ -35,7 +35,7 @@
                             :key="item.title + index"
                             data-scroll
                             data-scroll-class="is-inview"
-                            data-scroll-offset="70%, 0%"
+                            data-scroll-offset="40%, 0%"
                             data-scroll-repeat="true"
                             class="md-expblock__desc">
                             {{ line }}
@@ -46,7 +46,7 @@
                         <div
                             data-scroll
                             data-scroll-class="is-inview"
-                            data-scroll-offset="70%, 0%"
+                            data-scroll-offset="40%, 0%"
                             data-scroll-repeat="true"
                             v-for="project in item.projects"
                             :key="project.title"
