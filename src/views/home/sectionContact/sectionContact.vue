@@ -80,22 +80,22 @@ export default {
         return {
             data: [
                 {
+                    icon: require("@/assets/icons/icon-phone.svg"),
+                    title: "Cellular",
+                    desc: "+4672-288-19-29",
+                    link: "tel:+4672-288-19-29",
+                },
+                {
                     icon: require("@/assets/icons/icon-whatsapp.svg"),
                     title: "Whatsapp",
                     desc: "+4672-288-19-29",
                     link: "wa.me/+46722881929",
                 },
                 {
-                    icon: require("@/assets/icons/icon-telegram.svg"),
-                    title: "Telegram",
-                    desc: "@mameedy",
-                    link: "https://t.me/+46722881929",
-                },
-                {
-                    icon: require("@/assets/icons/icon-instagram.svg"),
-                    title: "Instagram",
-                    desc: "@_mukhammadumid",
-                    link: "https://www.instagram.com/_mukhammadumid",
+                    icon: require("@/assets/icons/icon-gmail.svg"),
+                    title: "Gmail",
+                    desc: "mukhammadumid@gmail.com",
+                    link: "mailto:mukhammadumid@gmail.com",
                 },
                 {
                     icon: require("@/assets/icons/icon-linkedin.svg"),
@@ -115,18 +115,18 @@ export default {
                     desc: "mameed",
                     link: "https://gitlab.com/umkamatov",
                 },
-                {
-                    icon: require("@/assets/icons/icon-gmail.svg"),
-                    title: "Gmail",
-                    desc: "mukhammadumid@gmail.com",
-                    link: "mailto:mukhammadumid@gmail.com",
-                },
-                {
-                    icon: require("@/assets/icons/icon-phone.svg"),
-                    title: "Cellular",
-                    desc: "+4672-288-19-29",
-                    link: "tel:+4672-288-19-29",
-                },
+                // {
+                //     icon: require("@/assets/icons/icon-telegram.svg"),
+                //     title: "Telegram",
+                //     desc: "@mameedy",
+                //     link: "https://t.me/+46722881929",
+                // },
+                // {
+                //     icon: require("@/assets/icons/icon-instagram.svg"),
+                //     title: "Instagram",
+                //     desc: "@_mukhammadumid",
+                //     link: "https://www.instagram.com/_mukhammadumid",
+                // },
             ],
         };
     },

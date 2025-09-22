@@ -86,6 +86,7 @@
         align-items: center;
         justify-content: space-between;
         width: 100%;
+        padding: 0 30px;
 
         &-made,
         &-update {
@@ -102,6 +103,25 @@
         transform: translateY(0) !important;
         opacity: 1 !important;
         pointer-events: all !important;
+    }
+}
+
+@media (max-width: 1540px) {
+    .md-footer {
+        &__quote {
+            width: 800px;
+            margin: -50px 0 0 0;
+
+            &-text {
+                font-size: 36px;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .md-footer {
+        position: unset;
     }
 }
 

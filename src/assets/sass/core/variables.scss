@@ -8,3 +8,25 @@ $yellow: #ffb443;
 $green: #4fd787;
 $telegram: linear-gradient(180deg, #2aabee 0%, #229ed9 100%);
 $black-gradient: linear-gradient(135deg, #1d1e2c 0%, #0b0c1b 100%);
+
+// texts
+:root {
+    --ttitle: 56px;
+    --tsubtitle: 20px;
+    --desctext: 23px;
+}
+
+@media (max-width: 1540px) {
+    :root {
+        --ttitle: 36px;
+        --tsubtitle: 16px;
+        --desctext: 15px;
+    }
+}
+@media (max-width: 992px) {
+    :root {
+        --ttitle: 26px;
+        --tsubtitle: 12px;
+        --desctext: 13px;
+    }
+}

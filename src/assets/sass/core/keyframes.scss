@@ -137,15 +137,3 @@
         visibility: visible;
     }
 }
-
-@media (max-width: 992px) {
-    @keyframes headerAppear {
-        from {
-            transform: translateY(-100px);
-        }
-
-        to {
-            transform: translateY(0px);
-        }
-    }
-}

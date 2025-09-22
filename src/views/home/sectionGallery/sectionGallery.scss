@@ -17,14 +17,14 @@
     &__title {
         color: #252324;
         font-family: "SK Zweig";
-        font-size: 56px;
+        font-size: var(--ttitle);
         font-style: normal;
         font-weight: 400;
         line-height: normal;
     }
 
     &__subtitle {
-        font-size: 20px;
+        font-size: var(--tsubtitle);
         line-height: 140%;
         font-weight: 300;
         color: rgba(#252324, 0.6);
@@ -176,6 +176,14 @@
             opacity: 1;
             transform: translateY(0);
             filter: revert;
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .md-glry {
+        &__grid {
+            grid-auto-rows: 120px;
         }
     }
 }

@@ -18,14 +18,14 @@
     &__title {
         color: #252324;
         font-family: "SK Zweig";
-        font-size: 56px;
+        font-size: var(--ttitle);
         font-style: normal;
         font-weight: 400;
         line-height: normal;
     }
 
     &__subtitle {
-        font-size: 20px;
+        font-size: var(--tsubtitle);
         line-height: 160%;
         font-weight: 300;
         color: rgba(#252324, 0.6);
@@ -39,7 +39,6 @@
 
         * {
             color: #fff;
-            letter-spacing: 1px;
         }
     }
 
@@ -47,7 +46,7 @@
         margin: 0 0 200px 0;
 
         &-text {
-            font-size: 23px;
+            font-size: var(--desctext);
             line-height: 180%;
             font-weight: 500;
             color: rgba(#252324, 0.2);
@@ -163,6 +162,55 @@
         &.is-inview {
             opacity: 1;
             pointer-events: all;
+        }
+    }
+}
+
+@media (max-width: 1540px) {
+    .md-rvws {
+        .md-rvwcard {
+            height: 300px;
+
+            &__info {
+                padding: 25px;
+            }
+
+            &__job {
+                font-size: 12px;
+            }
+
+            &__name {
+                font-size: 16px;
+            }
+
+            &__text {
+                font-size: 12px;
+            }
+        }
+    }
+}
+@media (max-width: 992px) {
+    .md-rvws {
+        &__info {
+            &-list {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        .md-rvwcard {
+            height: 350px;
+            margin: 0;
+
+            &:nth-child(3n + 2) {
+                margin: unset;
+            }
+
+            &:nth-child(3n + 3) {
+                margin: unset;
+            }
+
+            &:nth-child(2n + 2) {
+                margin: 50px 0 -50px 0;
+            }
         }
     }
 }

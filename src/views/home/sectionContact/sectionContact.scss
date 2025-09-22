@@ -17,7 +17,7 @@
     &__title {
         color: #252324;
         font-family: "SK Zweig";
-        font-size: 56px;
+        font-size: var(--ttitle);
         font-style: normal;
         // font-weight: 600;
         font-weight: 500;
@@ -25,7 +25,7 @@
     }
 
     &__subtitle {
-        font-size: 20px;
+        font-size: var(--tsubtitle);
         line-height: 160%;
         font-weight: 300;
         color: rgba(#252324, 0.6);
@@ -102,7 +102,6 @@
 
             * {
                 color: #fff;
-                letter-spacing: 1px;
             }
         }
     }
@@ -144,13 +143,10 @@
         &__details {
             &-title {
                 color: #252324;
-                font-family: "SK Zweig";
-                font-size: 24px;
+                font-size: 20px;
                 font-style: normal;
-                font-weight: 600;
+                font-weight: 500;
                 line-height: 100%; /* 28.8px */
-                padding: 2px 0 0 0;
-                letter-spacing: 0.4px;
             }
 
             &-desc {
@@ -165,6 +161,14 @@
         &:hover {
             filter: revert;
             box-shadow: 0 0 30px -5px rgba(#252525, 0.05);
+        }
+    }
+}
+
+@media (max-width: 1540px) {
+    .md-contact {
+        &__socials {
+            grid-template-columns: repeat(2, 1fr);
         }
     }
 }

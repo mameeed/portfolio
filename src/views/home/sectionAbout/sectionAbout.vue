@@ -11,7 +11,7 @@
                     class="md-about__title"
                     title="Mameed is"
                     :duration="30" />
-                <p class="md-about__subtitle">Frontend Engineer</p>
+                <p class="md-about__subtitle">Frontend Engineer blending design, code, and usability.</p>
             </div>
 
             <div class="md-about__info">
@@ -41,6 +41,9 @@
                         data-scroll-offset="40%, 0%"
                         data-scroll-repeat="true"
                         class="md-about__list-images">
+                        <img
+                            src="@/assets/images/world-of-tanks.png"
+                            alt="assassins creed logo" />
                         <img
                             src="@/assets/images/assassins-creed-logo.png"
                             alt="assassins creed logo" />
@@ -113,16 +116,18 @@
                     </p>
                 </div>
 
-                <div class="md-about__stack">
-                    <CompTitle
+                <div
+                    v-for="(item, index) in stackPack"
+                    :key="'stack' + index"
+                    class="md-about__stack">
+                    <h3
                         data-scroll
                         data-scroll-class="is-inview"
                         data-scroll-offset="40%, 0%"
                         data-scroll-repeat="true"
-                        class="md-about__stack-title"
-                        title="My Professional stack"
-                        :duration="0.001"
-                        :repeat="false" />
+                        class="md-about__stack-title">
+                        {{ item.name }}
+                    </h3>
 
                     <div class="md-about__stack-list">
                         <div
@@ -130,69 +135,13 @@
                             data-scroll-class="is-inview"
                             data-scroll-offset="40%, 0%"
                             data-scroll-repeat="true"
-                            v-for="item in primestack"
-                            :key="item.label"
-                            :data-label="item.label"
+                            v-for="stack in item.list"
+                            :key="stack.label"
+                            :data-label="stack.label"
                             class="md-about__stack-item">
                             <img
-                                :src="item.image"
-                                :alt="`Logo ${item.label}`" />
-                        </div>
-                    </div>
-                </div>
-
-                <div class="md-about__stack">
-                    <CompTitle
-                        data-scroll
-                        data-scroll-class="is-inview"
-                        data-scroll-offset="40%, 0%"
-                        data-scroll-repeat="true"
-                        class="md-about__stack-title"
-                        title="Had an experience with"
-                        :duration="0.001"
-                        :repeat="false" />
-
-                    <div class="md-about__stack-list">
-                        <div
-                            data-scroll
-                            data-scroll-class="is-inview"
-                            data-scroll-offset="40%, 0%"
-                            data-scroll-repeat="true"
-                            v-for="item in kapralstack"
-                            :key="item.label"
-                            :data-label="item.label"
-                            class="md-about__stack-item">
-                            <img
-                                :src="item.image"
-                                :alt="`Logo ${item.label}`" />
-                        </div>
-                    </div>
-                </div>
-
-                <div class="md-about__stack">
-                    <CompTitle
-                        data-scroll
-                        data-scroll-class="is-inview"
-                        data-scroll-offset="40%, 0%"
-                        data-scroll-repeat="true"
-                        class="md-about__stack-title"
-                        title="Loved using"
-                        :duration="0.001"
-                        :repeat="false" />
-
-                    <div class="md-about__stack-list">
-                        <div
-                            data-scroll
-                            data-scroll-class="is-inview"
-                            data-scroll-offset="40%, 0%"
-                            data-scroll-repeat="true"
-                            v-for="item in toolstack"
-                            :key="item.label"
-                            :data-label="item.label"
-                            class="md-about__stack-item">
-                            <img
-                                :src="item.image"
-                                :alt="`Logo ${item.label}`" />
+                                :src="stack.image"
+                                :alt="`Logo ${stack.label}`" />
                         </div>
                     </div>
                 </div>
@@ -493,14 +442,27 @@ export default {
         };
     },
     computed: {
-        primestack() {
-            return this.stack.filter((item) => item.level === "prime");
-        },
-        kapralstack() {
-            return this.stack.filter((item) => item.level === "kapral");
-        },
-        toolstack() {
-            return this.stack.filter((item) => item.level === "tool");
+        stackPack() {
+            let pack = [
+                {
+                    name: "My Professional stack",
+                    list: [],
+                },
+                {
+                    name: "Had an experience with",
+                    list: [],
+                },
+                {
+                    name: "Loved using",
+                    list: [],
+                },
+            ];
+
+            pack[0].list = this.stack.filter((item) => item.level === "prime");
+            pack[1].list = this.stack.filter((item) => item.level === "kapral");
+            pack[2].list = this.stack.filter((item) => item.level === "tool");
+
+            return pack;
         },
     },
     mounted() {},

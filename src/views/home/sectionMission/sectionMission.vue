@@ -13,7 +13,7 @@
                         <p
                             data-depth="0.05"
                             class="md-interctv__desc-text">
-                            With a designer’s eye and a developer’s keyboard, I bridge the gap between pretty and practical for more than 4 years. Yes, I fix the buttons you keep clicking too many times.
+                            I am a Frontend Engineer. With a designer’s eye and a developer’s keyboard, I bridge the gap between pretty and practical for more than 4 years. Yes, I fix the buttons you keep clicking too many times.
                         </p>
                     </div>
                     <img
@@ -23,7 +23,7 @@
                         data-scroll-target=".md-interctv"
                         class="md-interctv__holder-image"
                         src="@/assets/images/holder.png"
-                        alt="holder" />
+                        alt="Tree png" />
 
                     <div
                         ref="scene2"
@@ -52,8 +52,8 @@
                                     data-scroll
                                     data-scroll-speed="10"
                                     class="md-block__count-image"
-                                    src="https://picsum.photos/200"
-                                    alt="image" />
+                                    src="@/assets/images/intro-about.jpg"
+                                    alt="Abstract person" />
                                 <span
                                     data-scroll
                                     data-scroll-speed="6"
@@ -72,7 +72,7 @@
                                     data-scroll
                                     data-scroll-speed="2"
                                     class="md-block__info-desc">
-                                    Hi, I’m Mukhammadumid (Mameed). For over 4 years I’ve been building web experiences that are both beautiful and practical — and yes, I’m the one who makes sure those buttons you keep clicking actually work. I’m based in Stockholm, Sweden, holding a Bachelor’s degree in Computer Science, “npm run building” my Master’s and still growing like a tree.
+                                    Hi, I’m Mukhammadumid (Mameed). For over 4 years I’ve been building web experiences that are both beautiful and practical — and yes, I’m the one who makes sure those buttons you keep clicking actually work. I’m based in Stockholm, Sweden, holding a Bachelor’s degree in Computer Science, ongoing Master’s and still growing like a tree.
                                 </p>
                                 <CompButton
                                     data-scroll
@@ -91,8 +91,8 @@
                                     data-scroll
                                     data-scroll-speed="10"
                                     class="md-block__count-image"
-                                    src="https://picsum.photos/200"
-                                    alt="image" />
+                                    src="@/assets/images/intro-letswork.jpg"
+                                    alt="Work office building" />
                                 <span
                                     data-scroll
                                     data-scroll-speed="6"
@@ -132,10 +132,7 @@
                     </div>
                 </div>
 
-                <div
-                    data-scroll
-                    data-scroll-class="is-inview"
-                    class="md-interctv__block md-block-3">
+                <div class="md-interctv__block md-block-3">
                     <div class="container">
                         <div class="md-block__content">
                             <div class="md-block__count">
@@ -143,8 +140,8 @@
                                     data-scroll
                                     data-scroll-speed="10"
                                     class="md-block__count-image"
-                                    src="https://picsum.photos/200"
-                                    alt="image" />
+                                    src="@/assets/images/intro-amigos.jpg"
+                                    alt="Amigos image" />
                                 <span
                                     data-scroll
                                     data-scroll-speed="6"
@@ -209,7 +206,7 @@ export default {
         this.canvas.height = window.innerHeight;
 
         this.img.onload = () => {
-            this.context.drawImage(this.img, 0, 0);
+            this.updateImage(0);
         };
 
         this.preloadImages();
@@ -223,6 +220,12 @@ export default {
                 this.initScrollListener(scroll);
             });
         }
+
+        // window.addEventListener("resize", () => {
+        //     this.canvas.width = window.innerWidth;
+        //     this.canvas.height = window.innerHeight;
+        //     this.$root.$scroll.update();
+        // });
     },
     beforeDestroy() {
         if (this.scrollInstance) {

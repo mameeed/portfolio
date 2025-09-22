@@ -19,10 +19,19 @@
     &__title {
         color: #252324;
         font-family: "SK Zweig";
-        font-size: 56px;
+        font-size: var(--ttitle);
         font-style: normal;
         font-weight: 400;
         line-height: normal;
+    }
+
+    &__subtitle {
+        font-size: var(--tsubtitle);
+        line-height: 140%;
+        font-weight: 300;
+        color: rgba(#252324, 0.6);
+        transition: 0.5s;
+        align-self: center;
     }
 
     &__list {
@@ -31,7 +40,7 @@
         // gap: 10px;
 
         p {
-            font-size: 23px;
+            font-size: var(--desctext);
             line-height: 180%;
             font-weight: 500;
             color: rgba(#252324, 0.2);
@@ -158,6 +167,25 @@
                 opacity: 1;
                 pointer-events: all;
             }
+        }
+    }
+}
+
+@media (max-width: 1540px) {
+    .md-about {
+        &__stack {
+            &-item {
+                width: 65px;
+                height: 65px;
+            }
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .md-about {
+        &__content {
+            grid-template-columns: 20% auto;
         }
     }
 }
