@@ -23,15 +23,12 @@
 
     &__text {
         color: #252324;
-        // font-family: "SK Zweig";
-        // letter-spacing: 0.5px;
         font-size: 14px;
         font-style: normal;
         font-weight: 400;
         line-height: 120%; /* 19.2px */
         transition: 0.2s;
         white-space: nowrap;
-        // padding-top: 3px;
     }
 
     &__loading {

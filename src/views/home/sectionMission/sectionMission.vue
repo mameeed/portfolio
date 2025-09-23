@@ -206,7 +206,7 @@ export default {
         this.canvas.height = window.innerHeight;
 
         this.img.onload = () => {
-            this.updateImage(0);
+            this.updateImage(1);
         };
 
         this.preloadImages();

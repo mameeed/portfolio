@@ -69,9 +69,10 @@
                         <img
                             data-scroll
                             :data-scroll-speed="1"
-                            class="md-rvwcard__image"
                             :src="item.image"
-                            alt="image" />
+                            loading="lazy"
+                            class="md-rvwcard__image"
+                            :alt="'Image' + item.name" />
 
                         <div class="md-rvwcard__info">
                             <h3 class="md-rvwcard__name">{{ item.name }}</h3>

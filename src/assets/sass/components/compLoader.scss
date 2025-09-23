@@ -64,6 +64,14 @@
     }
 }
 
+@media (max-width: 768px) {
+    .md-introloader {
+        padding: 50px 0;
+        align-items: flex-end;
+        justify-content: center;
+    }
+}
+
 @keyframes blockAppear {
     0% {
         transform: translateY(-200px);

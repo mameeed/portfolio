@@ -25,7 +25,7 @@ import MainFooter from "@/components/compFooter.vue";
 import SiteLoader from "@/components/compSiteloader.vue";
 
 export default {
-    name: "vg-layout",
+    name: "md-layout",
     components: {
         // CompLeaveapp,
         // CompFollowform,

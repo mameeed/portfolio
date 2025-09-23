@@ -8,7 +8,7 @@
 import BaseLayout from "@/layout/BaseLayout.vue";
 
 export default {
-    name: "vg-spa",
+    name: "md-spa",
     components: {
         BaseLayout,
     },

@@ -34,6 +34,7 @@
                         data-scroll
                         :data-scroll-speed="Math.random() * 0.9 + 0.1"
                         class="md-glrycard__image"
+                        loading="lazy"
                         :src="`https://picsum.photos/400/${getRandomHeight()}?random=${n}`"
                         alt="Gallery image" />
                 </div>

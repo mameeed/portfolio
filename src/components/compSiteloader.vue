@@ -1,10 +1,11 @@
 <template>
-    <!-- v-if="false" -->
     <div
         v-if="isLoaderRendered"
         class="md-introloader"
         :class="{'md-animate': isAnimationFinished}">
-        <CompOdometer :isAnimated="isLoaded" />
+        <CompOdometer
+            class="md-introloader__number"
+            :isAnimated="isLoaded" />
     </div>
 </template>
 
@@ -24,6 +25,10 @@ export default {
         };
     },
     mounted() {
+        if (process.env.NODE_ENV === "development") {
+            this.isLoaderRendered = false;
+            return;
+        }
         window.addEventListener("load", this.onFullyLoaded);
     },
     beforeUnmount() {

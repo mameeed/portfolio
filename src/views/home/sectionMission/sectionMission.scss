@@ -211,25 +211,6 @@
                 gap: 20px;
             }
         }
-
-        &__special {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-
-            &-text {
-                color: rgba(#fff, 0.6);
-                font-size: 42px;
-                font-weight: 300;
-            }
-
-            &-title {
-                color: rgba(#fff, 0.6);
-                font-size: 164px;
-                font-weight: 900;
-            }
-        }
     }
 
     &.md-show {
