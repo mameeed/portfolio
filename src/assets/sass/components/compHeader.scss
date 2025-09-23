@@ -258,6 +258,46 @@ $totalHeight: ($topHeaderHeight + $headerHeight);
         transform: translateY(0);
         opacity: 1;
     }
+
+    .md-intcontacts {
+        position: fixed !important;
+        top: 0;
+        padding: 50px 0;
+
+        .container {
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 10px;
+            background: rgba(#252324, 0.4);
+            backdrop-filter: blur(5px);
+            padding: 15px 25px;
+            height: unset;
+            width: unset;
+            align-self: flex-end;
+        }
+
+        &__block {
+            display: flex;
+            flex-direction: row;
+            opacity: 1;
+
+            &-mail {
+                writing-mode: unset;
+                text-orientation: unset;
+                font-size: 14px;
+            }
+
+            &-social {
+                width: 30px;
+                height: 30px;
+            }
+
+            &::after {
+                display: none;
+            }
+        }
+    }
 }
 
 @keyframes mobHeadOpen {

@@ -89,6 +89,10 @@ body {
         max-width: 576px;
     }
 
+    .md-app {
+        min-height: 1000px;
+    }
+
     * {
         -webkit-tap-highlight-color: transparent;
         -webkit-touch-callout: none;

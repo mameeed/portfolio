@@ -1,13 +1,9 @@
 <template>
-    <footer
-        class="md-footer"
-        :class="{'is-inview': bottom > 15}">
+    <footer class="md-footer">
         <div class="md-footer__content container">
             <p class="md-footer__text">Here should’ve been a footer, copyright stuff and bunch of links, but since all needed we had above here is this thought:</p>
             <div class="md-footer__quote">
-                <h2 class="md-footer__quote-text">
-                    {{ text }}
-                </h2>
+                <h2 class="md-footer__quote-text">{{ text }}</h2>
                 <p class="md-footer__quote-author">Master Oogway</p>
             </div>
             <div class="md-footer__copyright">
@@ -25,35 +21,9 @@ export default {
     data() {
         return {
             text: "Yesterday is a history, Tomorrow is a mystery, but Today is a gift. That is why it is called the present.",
-            bottom: 0,
         };
     },
 
-    mounted() {
-        this.$nextTick(() => {
-            if (this.$root.$scroll) {
-                this.setBottom(this.$root.$scroll);
-            } else {
-                this.$root.$once("scrollReady", (scroll) => {
-                    this.setBottom(scroll);
-                });
-            }
-        });
-    },
-
-    methods: {
-        setBottom(scroll) {
-            scroll.on("scroll", (args) => {
-                const scrollY = args.scroll.y;
-                const maxScroll = args.limit.y;
-
-                if (scrollY >= maxScroll) {
-                    this.bottom++;
-                } else {
-                    this.bottom = false;
-                }
-            });
-        },
-    },
+    mounted() {},
 };
 </script>

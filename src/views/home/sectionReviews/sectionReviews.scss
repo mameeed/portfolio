@@ -189,6 +189,7 @@
         }
     }
 }
+
 @media (max-width: 992px) {
     .md-rvws {
         &__info {
@@ -210,6 +211,39 @@
 
             &:nth-child(2n + 2) {
                 margin: 50px 0 -50px 0;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .md-rvws {
+        padding: 50px 0;
+
+        &__content {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .md-rvwcard {
+            height: 290px;
+
+            &__info {
+                padding: 20px;
+            }
+
+            &__name {
+                font-size: 18px;
+            }
+
+            &__job {
+                margin: 0 0 10px 0;
+            }
+
+            &__text {
+                font-size: 12px;
+                margin: 0;
             }
         }
     }

@@ -1,7 +1,7 @@
 <template>
     <div
         data-scroll-container
-        class="vg-app">
+        class="md-app">
         <MainHeader data-scroll-section />
         <RouterView data-scroll-container />
         <MainFooter data-scroll-section />
@@ -48,7 +48,7 @@ export default {
                 smooth: true,
                 lerp: 0.09,
                 smartphone: {
-                    smooth: true,
+                    smooth: false,
                 },
                 tablet: {
                     smooth: true,
@@ -63,7 +63,6 @@ export default {
             });
 
             resizeObserver.observe(this.$el);
-            this.resizeObserver = resizeObserver;
         });
     },
     beforeDestroy() {
@@ -100,7 +99,7 @@ export default {
                 if (this.$root.$scroll) {
                     this.$root.$scroll.scrollTo(0, {
                         duration: 0,
-                        disableLerp: true,
+                        // disableLerp: true,
                     });
                 }
             });
@@ -108,8 +107,3 @@ export default {
     },
 };
 </script>
-<style>
-.tp-body {
-    z-index: 1;
-}
-</style>

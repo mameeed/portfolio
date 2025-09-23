@@ -187,3 +187,46 @@
         }
     }
 }
+
+@media (max-width: 768px) {
+    .md-glry {
+        padding: 50px 0;
+
+        &__content {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        &__grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .md-glrycard {
+            &__info {
+                padding: 15px;
+                display: none;
+
+                &-title {
+                    font-size: 16px;
+                    font-weight: 400;
+                }
+
+                &-desc {
+                    font-size: 14px;
+                }
+            }
+
+            &:nth-child(1),
+            &:nth-child(5),
+            &:nth-child(7) {
+                grid-column: span 2;
+                grid-row: span 2;
+            }
+
+            &:last-child {
+                display: none;
+            }
+        }
+    }
+}
