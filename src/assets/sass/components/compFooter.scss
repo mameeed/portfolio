@@ -41,12 +41,6 @@
             font-style: normal;
             font-weight: 700;
             line-height: normal;
-
-            // &::after {
-            //     display: inline-flex;
-            //     content: "_";
-            //     animation: coursor 1s step-start infinite;
-            // }
         }
 
         &-author {
@@ -161,17 +155,5 @@
                 font-size: 10px;
             }
         }
-    }
-}
-
-@keyframes coursor {
-    0% {
-        opacity: 1;
-    }
-    50% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
     }
 }

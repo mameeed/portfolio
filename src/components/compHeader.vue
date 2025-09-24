@@ -24,7 +24,9 @@
             </nav>
 
             <div class="md-header__actions">
-                <CompButton :btnLabel="'Get in touch'" />
+                <CompButton
+                    :btnLabel="'Get in touch'"
+                    @click.native="openRequestModal" />
             </div>
         </div>
         <div
@@ -32,7 +34,9 @@
             :class="[{'md-scrolled': isScrolled}, {'md-opened': isMobOpen}, {'md-closing': isMobClosing}]">
             <div class="md-mobheader__content">
                 <div class="md-mobheader__actions">
-                    <CompButton :btnLabel="'Get in touch'" />
+                    <CompButton
+                        :btnLabel="'Get in touch'"
+                        @click.native="openRequestModal" />
                 </div>
 
                 <div class="md-mobheader__links">
@@ -102,7 +106,6 @@
 </template>
 
 <script>
-// import {mapActions} from "vuex";
 import CompHacktext from "@/components/compHacktext.vue";
 
 export default {
@@ -152,6 +155,9 @@ export default {
         });
     },
     methods: {
+        openRequestModal() {
+            this.$store.dispatch("openRequestModal");
+        },
         initScrollListener(scroll) {
             scroll.on("scroll", (obj) => {
                 const scrollY = obj.scroll.y;

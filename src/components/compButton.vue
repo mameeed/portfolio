@@ -1,9 +1,8 @@
 <template>
     <component
-        :is="btnLink ? 'router-link' : 'button'"
-        :to="btnLink"
+        :is="componentTag"
+        v-bind="componentAttrs"
         :id="btnUid"
-        :target="getTarget(btnTarget)"
         class="mdbtn"
         :class="{'md-loading': btnLoading}">
         <img
@@ -17,10 +16,10 @@
             class="mdbtn__icon mdright"
             :src="require(`@/assets/icons/${btnRightIcon}.svg`)"
             alt="button icon" />
-        <!-- <img
-            class="btn__loading"
+        <img
+            class="mdbtn__loading"
             src="@/assets/icons/icon-loading.svg"
-            alt="button icon" /> -->
+            alt="button icon" />
     </component>
 </template>
 
@@ -56,14 +55,35 @@ export default {
         },
     },
     methods: {
-        // handleClick() {
-        //     // Handle the click event when vgbtnLink is not provided
-        //     if (!this.vgbtnLink) {
-        //         // Perform custom action or emit an event
-        //     }
-        // },
         getTarget(target) {
             return target ? "_blank" : "self";
+        },
+    },
+
+    computed: {
+        isExternal() {
+            return this.btnLink?.startsWith("http");
+        },
+        componentTag() {
+            if (!this.btnLink) {
+                return "button";
+            }
+
+            return this.isExternal ? "a" : "router-link";
+        },
+        componentAttrs() {
+            if (this.componentTag === "router-link") {
+                return {to: this.btnLink};
+            }
+
+            if (this.componentTag === "a") {
+                return {
+                    href: this.btnLink,
+                    target: this.getTarget(this.btnTarget),
+                };
+            }
+
+            return {};
         },
     },
 };

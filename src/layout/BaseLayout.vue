@@ -7,7 +7,7 @@
         <MainFooter data-scroll-section />
         <SiteLoader v-if="isSiteLoading" />
 
-        <!-- <CompLeaveapp /> -->
+        <CompLeaveapp />
         <!-- <CompFollowform /> -->
         <!-- <PageLoader /> -->
     </div>
@@ -17,7 +17,7 @@
 import LocomotiveScroll from "locomotive-scroll";
 import "locomotive-scroll/dist/locomotive-scroll.css";
 
-// import CompLeaveapp from "@/components/compLeaveapp.vue";
+import CompLeaveapp from "@/components/compLeaveapp.vue";
 // import CompFollowform from "@/components/compFollowform.vue";
 import MainHeader from "@/components/compHeader.vue";
 import MainFooter from "@/components/compFooter.vue";
@@ -27,7 +27,7 @@ import SiteLoader from "@/components/compSiteloader.vue";
 export default {
     name: "md-layout",
     components: {
-        // CompLeaveapp,
+        CompLeaveapp,
         // CompFollowform,
         MainHeader,
         MainFooter,

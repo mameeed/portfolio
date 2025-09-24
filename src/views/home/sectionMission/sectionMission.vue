@@ -77,6 +77,8 @@
                                 <CompButton
                                     data-scroll
                                     data-scroll-speed="0.5"
+                                    :btnTarget="true"
+                                    btnLink="https://calendly.com/mukhammadumid/30min"
                                     btnLabel="Book meeting" />
                             </div>
                         </div>
@@ -125,6 +127,7 @@
                                     <CompButton
                                         data-scroll
                                         data-scroll-speed="0.5"
+                                        @click.native="openEmployeeModal"
                                         btnLabel="Hire me" />
                                 </div>
                             </div>
@@ -205,12 +208,12 @@ export default {
         this.canvas.width = window.innerWidth;
         this.canvas.height = window.innerHeight;
 
+        this.preloadImages();
+        this.img.src = this.currentFrame(1);
+
         this.img.onload = () => {
             this.updateImage(1);
         };
-
-        this.preloadImages();
-        this.img.src = this.currentFrame(1);
 
         // Wait for locomotive scroll to be ready
         if (this.$root.$scroll) {
@@ -239,15 +242,8 @@ export default {
         currentFrame(index) {
             return `${this.baseUrl}webp-output/photo-${index}.webp`;
         },
-        mapInverse(inputValue) {
-            const inputMin = 6000;
-            const inputMax = 6500;
-            const outputMin = 180;
-            const outputMax = 480;
-
-            const clamped = Math.min(Math.max(inputValue, inputMin), inputMax);
-            const t = (clamped - inputMin) / (inputMax - inputMin);
-            return outputMin + (outputMax - outputMin) * t;
+        openEmployeeModal() {
+            this.$store.dispatch("openEmployeeModal");
         },
         preloadImages() {
             for (let i = 1; i <= this.frameCount; i++) {
