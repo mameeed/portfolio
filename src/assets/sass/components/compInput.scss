@@ -1,4 +1,4 @@
-.vg-input {
+.md-input {
     display: inline-block;
     width: 100%;
     padding: 15px 20px;
@@ -10,10 +10,36 @@
     color: rgba(#252324, 0.8);
 
     &::placeholder {
-        color: rgba(#252324, 0.4);
+        opacity: 0;
     }
 
-    &.vg-error {
+    &__wrapper {
+        position: relative;
+    }
+
+    &__label {
+        position: absolute;
+        top: 50%;
+        left: 20px;
+        font-size: 14px;
+        color: rgba(#252324, 0.4);
+        transform: translateY(-50%);
+        transition: 0.4s;
+    }
+
+    &:not(:placeholder-shown) {
+        padding: 15px 20px 0 20px;
+
+        & + .md-input__label {
+            top: 10px;
+            transform: revert;
+            font-size: 11px;
+            padding: 0 2px;
+            color: rgba(#252324, 0.3);
+        }
+    }
+
+    &.md-error {
         border-color: #f53737;
 
         &::placeholder {
@@ -21,7 +47,7 @@
         }
     }
 
-    &.vg-success {
+    &.md-success {
         border-color: #52d834;
 
         &::placeholder {
@@ -35,9 +61,22 @@
 }
 
 @media (max-width: 576px) {
-    .vg-input {
+    .md-input {
         padding: 10px 15px;
         height: 50px;
-        font-size: 14px;
+
+        &__label {
+            left: 15px;
+            font-size: 13px;
+        }
+
+        &:not(:placeholder-shown) {
+            padding: 15px 15px 0 15px;
+
+            & + .md-input__label {
+                top: 8px;
+                font-size: 11px;
+            }
+        }
     }
 }

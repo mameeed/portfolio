@@ -1,17 +1,22 @@
 <template>
-    <textarea
-        class="vg-textarea"
-        :class="textareaClass"
-        :value="modelValue"
-        @input="updateValue"
-        @blur="handleBlur"
-        :placeholder="placeholder"
-        :name="name"
-        :rows="rows"></textarea>
+    <div class="md-textarea__wrapper">
+        <textarea
+            class="md-textarea"
+            :class="textareaClass"
+            :value="modelValue"
+            @input="updateValue"
+            @blur="handleBlur"
+            :placeholder="placeholder"
+            :name="name"
+            :rows="rows"></textarea>
+
+        <p class="md-textarea__label">{{ placeholder }}</p>
+    </div>
 </template>
 
 <script>
 export default {
+    name: "component-textarea",
     props: {
         value: {
             type: [String, Number],

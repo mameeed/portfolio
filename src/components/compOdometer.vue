@@ -49,7 +49,7 @@
 
 <script>
 export default {
-    name: "comp-odometer",
+    name: "component-odometer",
     props: {
         isAnimated: {
             type: Boolean,

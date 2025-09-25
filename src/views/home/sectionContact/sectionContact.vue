@@ -40,26 +40,78 @@
 
                 <div class="md-contact__form">
                     <h3 class="md-contact__form-title">Let’s Connect</h3>
-                    <p class="md-contact__form-subtitle">Leave your request here I will approach you as soon as I will get the LTE internet connection</p>
+                    <p class="md-contact__form-subtitle">Leave your request here I will contact you back as soon as I get the appropriate LTE internet connection</p>
 
-                    <div class="md-contact__form-block">
-                        <CompInput
-                            :name="'user_name'"
-                            :placeholder="'Your Name'"
-                            :type="'text'" />
-                        <CompInput
-                            :name="'user_email'"
-                            :placeholder="'Your email'"
-                            :type="'email'" />
-                        <CompTextarea
-                            :name="'user_message'"
-                            :placeholder="'Summary of your message'"
-                            :type="'email'" />
+                    <form
+                        class="md-contact__form-block"
+                        @submit.prevent="handleSubmit"
+                        novalidate>
+                        <div class="md-contact__form-field">
+                            <CompInput
+                                id="contactUserName"
+                                name="userName"
+                                v-model="form.userName"
+                                class="md-contact__form-input"
+                                :inputClass="{'md-error': errors.userName}"
+                                placeholder="Your Name"
+                                autocomplete="name"
+                                type="text" />
+                            <p
+                                class="md-contact__form-error"
+                                v-if="errors.userName">
+                                {{ errors.userName }}
+                            </p>
+                        </div>
+
+                        <div class="md-contact__form-field">
+                            <CompInput
+                                id="contactUserEmail"
+                                name="userEmail"
+                                v-model="form.userEmail"
+                                class="md-contact__form-input"
+                                :inputClass="{'md-error': errors.userEmail}"
+                                placeholder="Your email"
+                                autocomplete="email"
+                                type="email" />
+                            <p
+                                class="md-contact__form-error"
+                                v-if="errors.userEmail">
+                                {{ errors.userEmail }}
+                            </p>
+                        </div>
+
+                        <div class="md-contact__form-field">
+                            <CompTextarea
+                                id="contactMessageSummary"
+                                name="messageSummary"
+                                v-model="form.messageSummary"
+                                class="md-contact__form-input"
+                                :textareaClass="{'md-error': errors.messageSummary}"
+                                placeholder="Summary of your message..." />
+                            <p
+                                class="md-contact__form-error"
+                                v-if="errors.messageSummary">
+                                {{ errors.messageSummary }}
+                            </p>
+                            <p class="md-contact__form-hint">{{ messageWordCount }} / 10 words minimum</p>
+                        </div>
+
+                        <p
+                            class="md-contact__form-error md-contact__form-error--general"
+                            v-if="errors.general">
+                            {{ errors.general }}
+                        </p>
+                        <p
+                            class="md-contact__form-success"
+                            v-if="submitSuccess">
+                            Thank you! Your request has been successfully submitted.
+                        </p>
 
                         <CompButton
                             class="md-contact__form-btn"
-                            :btnLabel="'Send'" />
-                    </div>
+                            :btnLabel="isSubmitting ? 'Sending...' : 'Send request'"
+                            :btnLoading="isSubmitting" />
+                    </form>
                 </div>
             </div>
         </div>
@@ -69,6 +121,7 @@
 <script>
 import CompInput from "@/components/compInput.vue";
 import CompTextarea from "@/components/compTextarea.vue";
+import http from "@/services/http";
 
 export default {
     name: "section-contact",
@@ -128,11 +181,105 @@ export default {
                 //     link: "https://www.instagram.com/_mukhammadumid",
                 // },
             ],
+            form: {
+                userName: "",
+                userEmail: "",
+                messageSummary: "",
+            },
+            errors: {
+                userName: "",
+                userEmail: "",
+                messageSummary: "",
+                general: "",
+            },
+            isSubmitting: false,
+            submitSuccess: false,
         };
     },
-    computed: {},
-    mounted() {},
-    methods: {},
+    computed: {
+        messageWordCount() {
+            const words = this.form.messageSummary.trim().split(/\s+/);
+            return words.filter(Boolean).length;
+        },
+    },
+    methods: {
+        resetErrors() {
+            Object.assign(this.errors, {
+                userName: "",
+                userEmail: "",
+                messageSummary: "",
+                general: "",
+            });
+        },
+        validateForm() {
+            let isValid = true;
+
+            if (!this.form.userName.trim()) {
+                this.errors.userName = "Please enter your name.";
+                isValid = false;
+            }
+
+            if (!this.form.userEmail.trim()) {
+                this.errors.userEmail = "Please enter your email.";
+                isValid = false;
+            } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(this.form.userEmail.trim())) {
+                this.errors.userEmail = "Please enter a valid email address.";
+                isValid = false;
+            }
+
+            const wordCount = this.messageWordCount;
+            if (!this.form.messageSummary.trim()) {
+                this.errors.messageSummary = "Please provide a summary of your message.";
+                isValid = false;
+            } else if (wordCount < 10) {
+                this.errors.messageSummary = "Message summary must be at least 10 words.";
+                isValid = false;
+            }
+
+            return isValid;
+        },
+        resetForm() {
+            this.form.userName = "";
+            this.form.userEmail = "";
+            this.form.messageSummary = "";
+        },
+        async handleSubmit() {
+            if (this.isSubmitting) return;
+
+            this.submitSuccess = false;
+            this.resetErrors();
+
+            if (!this.validateForm()) return;
+
+            this.isSubmitting = true;
+
+            try {
+                const trimmedValues = {
+                    userName: this.form.userName.trim(),
+                    userEmail: this.form.userEmail.trim(),
+                    messageSummary: this.form.messageSummary.trim(),
+                };
+
+                const formData = new FormData();
+                formData.append("userName", trimmedValues.userName);
+                formData.append("userEmail", trimmedValues.userEmail);
+                formData.append("messageSummary", trimmedValues.messageSummary);
+
+                await http.post("/sendRequest", formData);
+
+                this.submitSuccess = true;
+                this.resetForm();
+
+                setTimeout(() => {
+                    this.submitSuccess = false;
+                }, 4000);
+            } catch (error) {
+                this.errors.general = error.message || "Failed to send the request.";
+            } finally {
+                this.isSubmitting = false;
+            }
+        },
+    },
 };
 </script>
 

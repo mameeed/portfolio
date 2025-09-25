@@ -14,7 +14,7 @@
 import CompHacktext from "@/components/compHacktext.vue";
 
 export default {
-    name: "compTitle",
+    name: "component-title",
     components: {
         CompHacktext,
     },

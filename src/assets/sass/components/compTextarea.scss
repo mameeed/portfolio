@@ -1,4 +1,4 @@
-.vg-textarea {
+.md-textarea {
     display: block;
     width: 100%;
     padding: 15px 20px;
@@ -6,7 +6,6 @@
     border: 1px solid rgba(#252324, 0.2);
     background: #fff;
     font-size: 14px;
-    transition: 0.3s;
     font-weight: 300;
     resize: vertical;
     min-height: 150px;
@@ -14,10 +13,36 @@
     color: rgba(#252324, 0.8);
 
     &::placeholder {
-        color: rgba(#252324, 0.4);
+        opacity: 0;
     }
 
-    &.vg-error {
+    &__wrapper {
+        position: relative;
+    }
+
+    &__label {
+        position: absolute;
+        top: 27px;
+        left: 23px;
+        font-size: 14px;
+        color: rgba(#252324, 0.4);
+        transform: translateY(-50%);
+        transition: 0.4s;
+    }
+
+    &:not(:placeholder-shown) {
+        padding: 25px 20px 0 20px;
+
+        & + .md-textarea__label {
+            top: 12px;
+            left: 20px;
+            transform: revert;
+            font-size: 11px;
+            color: rgba(#252324, 0.3);
+        }
+    }
+
+    &.md-error {
         border-color: #f53737;
 
         &::placeholder {
@@ -25,7 +50,7 @@
         }
     }
 
-    &.vg-success {
+    &.md-success {
         border-color: #52d834;
 
         &::placeholder {
@@ -35,5 +60,17 @@
 
     &:focus {
         border-color: rgba(#004cff, 0.6);
+    }
+}
+
+@media (max-width: 768px) {
+    .md-textarea {
+        padding: 10px 15px;
+
+        &__label {
+            top: 22px;
+            left: 15px;
+            font-size: 13px;
+        }
     }
 }

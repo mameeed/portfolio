@@ -6,17 +6,17 @@ Vue.use(Vuex);
 const MODAL_CONFIG = {
     request: {
         id: "request",
-        title: "Leave your request.",
+        title: "Leave your request",
         subtitle: "Fill in the fields below and send your request. I’ll get back to you as soon as I’m online. I also welcome any feedback, questions, or opinions you’d like to share.",
     },
     review: {
         id: "review",
-        title: "What do you think.",
+        title: "What do you think",
         subtitle: "Fill in the fields below and send your review. I’ll get back to you as soon as I’m online. I welcome any feedback or opinions about me you’d like to share.",
     },
     employee: {
         id: "employee",
-        title: "Hiring me.",
+        title: "Hiring me",
         subtitle: "Great! Please fill in the fields below and send your request. I’ll get back to you as soon as I’m online. I am looking forward to have a great business relationship with your company.",
     },
 };

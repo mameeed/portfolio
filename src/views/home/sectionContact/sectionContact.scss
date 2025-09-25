@@ -95,6 +95,17 @@
             margin: 20px 0 0 0;
         }
 
+        &-field {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            position: relative;
+        }
+
+        &-input {
+            width: 100%;
+        }
+
         &-btn {
             align-self: flex-end;
             padding: 0 40px;
@@ -103,6 +114,37 @@
             * {
                 color: #fff;
             }
+        }
+
+        &-error {
+            font-size: 12px;
+            line-height: 1.4;
+            color: $red;
+
+            &--general {
+                margin: 5px 0 0 0;
+                padding: 12px 16px;
+                border-radius: 5px;
+                background: rgba($red, 0.12);
+                text-align: center;
+            }
+        }
+
+        &-success {
+            font-size: 14px;
+            line-height: 1.5;
+            margin: 0;
+            padding: 12px 16px;
+            border-radius: 5px;
+            background: rgba($green, 0.12);
+            color: darken($green, 20%);
+            text-align: center;
+        }
+
+        &-hint {
+            font-size: 12px;
+            color: rgba(#252324, 0.4);
+            margin: -4px 0 0 auto;
         }
     }
 

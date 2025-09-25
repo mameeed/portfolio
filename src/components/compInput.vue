@@ -1,17 +1,20 @@
 <template>
-    <input
-        class="vg-input"
-        :class="inputClass"
-        :value="modelValue"
-        @input="updateValue"
-        @blur="handleBlur"
-        :placeholder="placeholder"
-        :type="type" />
-    <!-- v-mask="mask" -->
+    <div class="md-input__wrapper">
+        <input
+            class="md-input"
+            :class="inputClass"
+            :value="modelValue"
+            @input="updateValue"
+            @blur="handleBlur"
+            :placeholder="placeholder"
+            :type="type" />
+        <p class="md-input__label">{{ placeholder }}</p>
+    </div>
 </template>
 
 <script>
 export default {
+    name: "component-input",
     props: {
         value: {
             type: [String, Number],

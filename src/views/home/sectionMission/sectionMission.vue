@@ -168,6 +168,13 @@
                                 <CompButton
                                     data-scroll
                                     data-scroll-speed="0.5"
+                                    @click.native="
+                                        $root.$scroll.scrollTo('#contact', {
+                                            offset: 0,
+                                            duration: 6000,
+                                            lerp: 0.05,
+                                        })
+                                    "
                                     btnLabel="Contact" />
                             </div>
                         </div>

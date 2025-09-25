@@ -11,6 +11,7 @@
 
 <script>
 export default {
+    name: "component-hacktext",
     props: {
         label: {
             type: String,

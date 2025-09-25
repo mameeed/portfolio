@@ -15,6 +15,7 @@
 
                 <CompButton
                     class="md-rvws__btn"
+                    @click.native="$store.dispatch('openReviewModal')"
                     btnLabel="Leave yours" />
             </div>
 

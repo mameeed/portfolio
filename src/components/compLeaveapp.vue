@@ -9,7 +9,15 @@
                 <span
                     class="md-lvp__close"
                     @click="closeModal"></span>
-                <formRequest @closeModal="closeModal" />
+                <FormRequest
+                    v-if="modalType === 'request'"
+                    @closeModal="closeModal" />
+                <FormReview
+                    v-else-if="modalType === 'review'"
+                    @closeModal="closeModal" />
+                <FormEmployee
+                    v-else-if="modalType === 'employee'"
+                    @closeModal="closeModal" />
             </div>
         </div>
     </div>
@@ -17,12 +25,16 @@
 
 <script>
 import {mapGetters} from "vuex";
-import formRequest from "./forms/formRequest.vue";
+import FormRequest from "./forms/formRequest.vue";
+import FormReview from "./forms/formReview.vue";
+import FormEmployee from "./forms/formEmployee.vue";
 
 export default {
     name: "component-leaveapp",
     components: {
-        formRequest,
+        FormRequest,
+        FormReview,
+        FormEmployee,
     },
     data() {
         return {
@@ -52,7 +64,7 @@ export default {
             setTimeout(() => {
                 this.$store.dispatch("closeModal");
                 this.isClosing = false;
-            }, 1300);
+            }, 1600);
         },
     },
 };
