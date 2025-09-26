@@ -1,4 +1,4 @@
-const DEFAULT_BASE_URL = "http://localhost/mameed";
+const DEFAULT_BASE_URL = "https://api.mameed.com";
 
 class HttpError extends Error {
     constructor(message, {status, data} = {}) {

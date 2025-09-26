@@ -194,10 +194,8 @@ export default {
         return {
             frameCount: 193,
             images: [],
-            img: new Image(),
             canvas: null,
             context: null,
-            scrollY: null,
             isVisible: false,
         };
     },
@@ -216,11 +214,6 @@ export default {
         this.canvas.height = window.innerHeight;
 
         this.preloadImages();
-        this.img.src = this.currentFrame(1);
-
-        this.img.onload = () => {
-            this.updateImage(1);
-        };
 
         // Wait for locomotive scroll to be ready
         if (this.$root.$scroll) {
@@ -255,6 +248,11 @@ export default {
         preloadImages() {
             for (let i = 1; i <= this.frameCount; i++) {
                 const img = new Image();
+                if (i === 1) {
+                    img.onload = () => {
+                        this.updateImage(1);
+                    };
+                }
                 img.src = this.currentFrame(i);
                 this.images.push(img);
             }
@@ -275,8 +273,9 @@ export default {
             window.requestAnimationFrame(() => this.updateImage(frameIndex + 1));
         },
         updateImage(index) {
-            const img = this.images[index];
-            if (!img) return;
+            const frame = Math.max(1, Math.min(this.frameCount, index));
+            const img = this.images[frame];
+            if (!img || !img.complete) return;
 
             const canvas = this.canvas;
             const ctx = this.context;
