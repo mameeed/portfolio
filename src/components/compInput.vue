@@ -1,5 +1,5 @@
 <template>
-    <div class="md-input__wrapper">
+    <label class="md-input__wrapper">
         <input
             class="md-input"
             :class="inputClass"
@@ -9,7 +9,7 @@
             :placeholder="placeholder"
             :type="type" />
         <p class="md-input__label">{{ placeholder }}</p>
-    </div>
+    </label>
 </template>
 
 <script>

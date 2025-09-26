@@ -1,5 +1,5 @@
 <template>
-    <div class="md-textarea__wrapper">
+    <label class="md-textarea__wrapper">
         <textarea
             class="md-textarea"
             :class="textareaClass"
@@ -11,7 +11,7 @@
             :rows="rows"></textarea>
 
         <p class="md-textarea__label">{{ placeholder }}</p>
-    </div>
+    </label>
 </template>
 
 <script>
